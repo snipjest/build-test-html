@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="CryptoGex">
+  <link rel="manifest" href="/site.webmanifest">
+  <style>
+    body {
+      background-color: #231f25;
+    }
+
+    body.loading #app {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 10000;
+      background-color: #231f25;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    body:not(.loading) .preloader {
+      opacity: 0;
+      visibility: hidden;
+      z-index: -10;
+      transition: all 0.2s ease;
+    }
+
+    body:not(.loading) #app {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .preloader__icon {
+      width: 150px;
+      height: auto;
+    }
+
+    .preloader__icon svg {
+      width: 100%;
+    }
+
+    .draw-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: draw 4s ease forwards;
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+  <title>Политика Cookie</title>
+  <link href="css/main.min.css" rel="stylesheet">
+</head>
+
+<body class="loading">
+  <div class="preloader">
+    <div class="preloader__icon">
+      <svg width="273" height="346" viewBox="0 0 273 346" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M203.491 108.538C203.91 108.269 204.165 107.807 204.165 107.31C204.165 106.812 203.911 106.348 203.491 106.079L137.112 63.4698C136.627 63.1582 135.972 63.1582 135.486 63.4698L54.7881 115.219C54.3692 115.488 54.1143 115.951 54.1143 116.449V229.146C54.1143 229.627 54.3101 230.067 54.7422 230.345L135.415 282.11C135.649 282.261 135.941 282.364 136.233 282.394C136.524 282.423 136.846 282.383 137.113 282.211L218.261 230.045L218.398 229.956V214.834H136.391V226.644H169.43L136.788 247.648C136.5 247.832 136.099 247.833 135.811 247.648L83.9111 214.364C83.6889 214.221 83.5284 213.866 83.5283 213.539V132.056C83.5285 131.752 83.6726 131.471 83.9111 131.317L135.739 98.048L135.851 97.9874C136.119 97.8656 136.435 97.8857 136.688 98.048L177.579 124.246C178.065 124.559 178.72 124.559 179.206 124.246L203.492 108.539L203.491 108.538Z" stroke="#E2A33C" stroke-width="2" fill="transparent" class="draw-path" />
+        <path d="M269.292 119.936C270.756 118.995 271.6 117.351 271.6 115.63V89.7189C271.599 87.9962 270.753 86.3955 269.292 85.4571L139.022 1.81847C137.333 0.733716 135.128 0.72361 133.437 1.80968L3.30762 85.4571C1.84348 86.3971 1 88.043 1 89.7628V256.005C1 257.723 1.78732 259.293 3.25293 260.234L133.437 343.785C135.127 344.871 137.3 344.871 138.99 343.785L269.292 260.224C270.753 259.285 271.6 257.685 271.6 255.962V155.954L244.439 173.225L244.438 173.226C242.969 174.169 242.187 175.827 242.187 177.539L242.099 242.338C242.099 242.63 241.95 242.904 241.701 243.064L136.688 310.491C136.392 310.681 136.092 310.687 135.811 310.506L30.7246 243.064C30.4763 242.904 30.3271 242.63 30.3271 242.338V103.343C30.3272 103.051 30.4761 102.777 30.7246 102.617L135.739 35.1036L135.842 35.0519C135.954 35.008 136.091 34.9891 136.242 35.0001C136.442 35.0148 136.64 35.0808 136.788 35.1759L236.075 98.9825L236.311 99.1437C237.455 99.9771 238.107 101.23 238.107 102.653C238.107 104.178 237.36 105.585 236.075 106.41L135.669 170.942H188.286C189.271 170.942 190.236 170.659 191.063 170.128L269.292 119.936Z" stroke="#E2A33C" stroke-width="2" fill="transparent" class="draw-path" />
+      </svg>
+    </div>
+  </div>
+  <div id="app">
+    <header class="header gsap-header">
+      <div class="container">
+        <div class="header__burger">
+          <button class="burger" type="button">
+            <div class="burger__inner">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+        <div class="header__logo">
+          <a class="logo" href="/">
+            <svg class="logo__icon" width="24" height="24" viewBox="0 0 24 24">
+              <use xlink:href="#icon-logo"></use>
+            </svg>
+            <div class="logo__text">Crypto <span>Gex</span></div>
+          </a>
+        </div>
+        <div class="header__container">
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link typo-p-l link--yellow anchor-js"><span>Продукты</span></a>
+              </li>
+              <li class="nav__item">
+                <a href="#conditions" class="nav__link typo-p-l link--yellow anchor-js"><span>Условия</span></a>
+              </li>
+              <li class="nav__item">
+                <a href="#service" class="nav__link typo-p-l link--yellow anchor-js"><span>Обслуживание</span></a>
+              </li>
+              <li class="nav__item">
+                <a href="#faq" class="nav__link typo-p-l link--yellow anchor-js"><span>FAQ</span></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <a class="header__telegram link--yellow" href="https://t.me/cryptogex_bot" target="_blank">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <use xlink:href="#icon-telegram-stroke"></use>
+          </svg>
+          <span>@cryptogex_bot</span>
+        </a>
+      </div>
+    </header>
+    <main>
+      <section class="info-page">
+        <div class="container">
+          <h1 class="info-page__title typo-h3">Политика Cookie</h1>
+          <div class="info-page__content user-content">
+            <h2>1. Общие положения</h2>
+            <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые Кузахметовым Нариманом Хусяиновичем (далее — Оператор).</p>
+            <h2>2. Общие положения</h2>
+            <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые Кузахметовым Нариманом Хусяиновичем (далее — Оператор).</p>
+            <p>Использование вами Сервиса любым способом и в любой форме в пределах его объявленных функциональных возможностей, включая:</p>
+            <ol>
+              <li>Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</li>
+              <li>Настоящая политика Оператора в отношении обработки персональных данных (далее — Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта www.</li>
+              <li>Настоящая политика Оператора в отношении обработки персональных данных (далее — Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта www.</li>
+              <li>Платформа — программно-аппаратные средства, интегрированные с сайтом Администрации;</li>
+              <li>Платформа — программно-аппаратные средства, интегрированные с сайтом Администрации;</li>
+              <li>Платформа — программно-аппаратные средства, интегрированные с сайтом Администрации;</li>
+            </ol>
+            <h2>3. Общие положения</h2>
+            <p>Использование вами Сервиса любым способом и в любой форме в пределах его объявленных функциональных возможностей, включая:</p>
+            <ul>
+              <li>Размещение или отображение на сайте любых материалов, включая но не ограничиваясь такими как: тексты, гипертекстовые ссылки, изображения, аудио и видео — файлы, сведения и/или иная информация, создаёт договор на условиях настоящего Соглашения в соответствии с положениями ст. 437 и ст. 438 Гражданского кодекса Российской Федерации.</li>
+              <li>Платформа — программно-аппаратные средства, интегрированные с сайтом Администрации;</li>
+              <li>Размещение или отображение на сайте любых материалов, включая но не ограничиваясь такими как: тексты, гипертекстовые ссылки, изображения, аудио и видео — файлы, сведения и/или иная информация, создаёт договор на условиях настоящего Соглашения в соответствии с положениями ст. 437 и 438 Гражданского кодекса Российской Федерации.</li>
+            </ul>
+          </div>
+          <div class="info-page__footer">
+            <h3 class="typo-h6">Важно знать!</h3>
+            <p class="typo-p1"> Для придания юридической силы дисклаймеру, включенному в текст соглашения с пользователем, необходимо подтвердить факт ознакомления и принятия пользователем его условий. Для этого используется предусмотренный законодательством механизм заключения договоров. </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__logo">
+            <a class="logo" href="/">
+              <svg class="logo__icon" width="24" height="24" viewBox="0 0 24 24">
+                <use xlink:href="#icon-logo"></use>
+              </svg>
+              <div class="logo__text">Crypto <span>Gex</span></div>
+            </a>
+          </div>
+          <div class="footer__doc">
+            <p class="footer__subtitle typo-t2">Документы</p>
+            <ul class="footer__doc-list">
+              <li><a class="typo-p-l link--yellow" href="politika.html" target="_blank"><span>Политика Конфиденциальности</span></a></li>
+              <li><a class="typo-p-l link--yellow" href="soglashenie.html" target="_blank"><span>Пользовательское соглашение</span></a></li>
+              <li><a class="typo-p-l link--yellow" href="aml.html" target="_blank"><span>Политика AML/KYC</span></a></li>
+              <li><a class="typo-p-l link--yellow" href="cookie.html" target="_blank"><span>Политика Cookie</span></a></li>
+            </ul>
+          </div>
+          <div class="footer__contacts">
+            <p class="footer__subtitle typo-t2">Контакты</p>
+            <div class="footer__contacts-list">
+              <div class="footer__contacts-item">
+                <p class="footer__contacts-subtitle typo-p-l">Поддержка в телеграм</p>
+                <a class="footer__contacts-link link--yellow" href="https://t.me/cryptogex_support" target="_blank">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#icon-telegram-stroke"></use>
+                  </svg>
+                  <span>@cryptogex_support</span>
+                </a>
+              </div>
+              <div class="footer__contacts-item">
+                <p class="footer__contacts-subtitle typo-p-l">Канал в телеграм</p>
+                <a class="footer__contacts-link link--yellow" href="https://t.me/cryptogex_channel" target="_blank">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#icon-telegram-stroke"></use>
+                  </svg>
+                  <span>@cryptogex_channel</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom typo-p-l"> 2025 CryptoGex. Все права защищены </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
